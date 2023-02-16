@@ -6,7 +6,7 @@ from prettytable import PrettyTable
 if __name__ == "__main__":
     path = "matrix.txt"
     format = ".txt"
-    matrixSize = 5
+    matrixSize = 9
     if file_exist(path=path, format=format):
         matrix = PrettyTable()
         matrix.field_names = ["Graph"] + [i + 1 for i in range(matrixSize)]
