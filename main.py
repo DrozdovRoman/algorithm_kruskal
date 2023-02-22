@@ -1,7 +1,7 @@
-from init_matrix import file_exist, read_matrix
-from algorithm_kruskal import FindMinimumSpanningForest
-from copy import deepcopy
 from prettytable import PrettyTable
+from copy import deepcopy
+from init_matrix import file_exist, read_matrix
+from algorithm_kruskal import Graph
 
 if __name__ == "__main__":
     path = "matrix.txt"
@@ -16,6 +16,9 @@ if __name__ == "__main__":
             rowsPrint[i] = [i + 1] + rowsPrint[i]
         matrix.add_rows(rowsPrint)
         print("Матрица смежности\n", matrix, sep="")
-        FindMinimumSpanningForest(rows)
+        print("Краскала")
+        graph = Graph(matrixSize)
+        graph.add_matrix(rows)
+        graph.FindMinimumSpanningForest()
     else:
         print("File not found.")
